@@ -1,0 +1,37 @@
+using Business.Concrete;
+using Entities.Concrete;
+
+namespace WorkPlace
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Person person1 = new Person();
+            person1.FirstName = "Derviş";
+            person1.LastName = "Dağtekin";
+            person1.DateOfBirthYear = 2000;
+            person1.NationalIdentity = 101;
+
+            Person person2 = new Person();
+            person2.FirstName = "Şaner";
+            person2.LastName = "Dağtekin";
+            person2.DateOfBirthYear = 2010;
+            person2.NationalIdentity = 102;
+
+
+            bankManager bank0Manager = new bankManager(new PersonManager());
+            bankManager.GiveMask(person1 );
+
+            faberlicManager faberlicManager = new faberlicManager(new PersonManager());
+            faberlicManager.GiveMask(person2);
+
+
+
+            Console.ReadLine(); 
+            Console.ReadLine(); 
+
+
+        }
+    }
+}
